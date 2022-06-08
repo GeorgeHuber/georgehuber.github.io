@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="bg-slate-900 text-indigo-100 w-full min-h-full">
       <div className="flex flex-col items-center sm:flex-row-reverse sm:justify-start sm:pt-6 sm:pb-14 h-[81vh] sm:h-[92vh]">
-        <img className="mt-14 sm:mt-0 w-3/5 md:w-1/3 lg:w-1/4 lg:mr-auto" src={"./george2.png"}></img>
+        <img className="mt-14 sm:mt-0 w-3/5 md:w-1/3 lg:w-1/4 lg:mr-auto" src={"./george3.png"}></img>
         <div className='sm:hidden sm:w-1/2 m-auto min-h-full flex justify-center'>
           <h1 className='sm:hidden font-tangerine text-6xl sm:text-8xl p-8'>George Huber</h1>
         </div>
