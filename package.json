@@ -2,7 +2,7 @@
   "name": "george-site",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://GeorgeHuber.github.io/react-gh-pages",
+  "homepage": "https://GeorgeHuber.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
