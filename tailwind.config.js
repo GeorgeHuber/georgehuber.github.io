@@ -1,0 +1,14 @@
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}"
+  ],
+  theme: {
+    extend: {
+      fontFamily:{
+        'noto-sans':['Noto Sans','sans-serif'],
+        "tangerine":["Tangerine","cursive"]
+      }
+    },
+  },
+  plugins: [],
+}
