@@ -6,6 +6,12 @@ import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import { Link, Element, animateScroll} from 'react-scroll'
 import Sketch from "react-p5";
 
+import { HomeScreen } from './components/Home';
+import { MeScreen } from './components/Me';
+import { ProjectsScreen } from './components/Projects';
+
+import { SocialDiv } from './components/Socials';
+
 var y0 = null;
 
 let head; 
@@ -13,11 +19,14 @@ let vel;
 let headTrail = [];
 let moveOnOwn = true;
 let t = 0;
+
 function App() {
   const navRef = useRef(null);
   const screenRef = useRef(null);
 
   const [navPercent, setNavPercent] = useState(0)
+  const [blink, setBlink] = useState(false);
+
   const bottomPos = (element) => element.getBoundingClientRect().bottom;
   const getHeight = (element) => element.offsetHeight;
 
@@ -35,13 +44,28 @@ function App() {
     setNavPercent(navPercent)
     
   }
+
+  const alternateCurrent = () =>{
+    setBlink(b=>!b);
+    //console.log(blink);
+}
+
+  useEffect(()=>{
+    const blinkTimer = setInterval(()=>{
+      alternateCurrent();
+    }, 800);
+     
+    return () => {
+      clearInterval(blinkTimer);
+    };
+  })
   
   useLayoutEffect(()=>{
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [])
 
-  const headerClasses = "h-[8vh] shadow-xl justify-center items-center w-full top-0 left-0 bg-slate-800 md:px-10 py-4 flex font-noto-sans font-semibold select-none text-lg"
+  const headerClasses = "z-40 h-[8vh] shadow-xl justify-center items-center w-full top-0 left-0 bg-black md:px-10 py-4 flex font-noto-sans font-semibold select-none text-lg"
 
 
   const setup = (p5, canvasParentRef) => {
@@ -51,7 +75,10 @@ function App() {
     vel = p5.createVector(1,0)
   }
 
+
+  
   const draw = (p5) => {
+    let halfScreen = p5.createVector(p5.width/2, p5.height/2)
     t++;
     p5.background(15, 23, 42 )
 
@@ -74,9 +101,30 @@ function App() {
       tan.mult(p5.noise(t*0.005))
       let norm = p5.createVector(vel.x, vel.y,0).cross(p5.createVector(0,0,1));
       norm.mult(p5.noise(t*0.01+1000)-0.5)
+
+      let testv = vel.copy();
+      testv.add(head);
+      testv.sub(halfScreen)
+
+      let testh = head.copy();
+      testh.sub(halfScreen)
+      if (testv.mag()>testh.mag()){
+        //p5.ellipse(10,10,20,20)
+        testv.add(halfScreen)
+        let s = (((p5.abs(testv.x-halfScreen.x))/halfScreen.x)**2 + ((p5.abs(testv.y-halfScreen.y))/halfScreen.y)**2)
+        //p5.text(s.toFixed(3),30,30)
+        norm.normalize()
+        norm.mult(s**2*2)
+          //12*12**(2.6*Math.sqrt(s)**1.5-2.6))
+        //if (head.x<60 ||head.x>p5.width-60 || head.y<60 || head.y>p5.height-60){
+          //norm.normalize()
+          
+        //}
+      }
       norm.mult(0.5)
       acc = tan.add(p5.createVector(norm.x, norm.y))
       acc.mult(0.001)
+
     }
     else{
       let difference = p5.createVector(p5.mouseX - head.x, p5.mouseY - head.y)
@@ -102,19 +150,27 @@ function App() {
       vel = p5.createVector(vel.x, -p5.abs(vel.y))
     }
     head.add(vel);
-    p5.noStroke();
-    p5.fill(255)
-    p5.ellipse(head.x, head.y,10,10)
+    
     //console.log(head)
-    //p5.noFill()
-    p5.fill(0)
+    p5.noFill()
+    //p5.fill(0)
     p5.strokeWeight(5);
     p5.stroke(255)
     p5.beginShape()
+    var i = 0;
     for (let point of headTrail){
-      //p5.ellipse(point.x, point.y,5,5)
+      i+=1;
       p5.curveVertex(point.x, point.y) 
     }
+    var i = 0;
+    p5.noStroke()
+    for (let point of headTrail){
+      i+=1;
+      p5.fill(parseInt(255*(i/headTrail.length)),parseInt(255*(i/headTrail.length)))
+      p5.rect(point.x-5, point.y-5,10,10)
+    }
+
+    p5.noFill()
     p5.endShape()
     headTrail.push(head.copy())
     if(headTrail.length>150){
@@ -123,6 +179,10 @@ function App() {
     if(head.x>p5.mouseX-20 && head.x<p5.mouseX+20 && head.y>p5.mouseY-20 && head.y<p5.mouseY+20 ){
       moveOnOwn = true
     }
+
+    p5.noStroke();
+    p5.fill(255)
+    p5.ellipse(head.x, head.y,20,20)
   }
 
   const onMove = (p5) => {
@@ -132,27 +192,34 @@ function App() {
   }
 
   return (
-    <div className="bg-slate-900 text-indigo-100 w-full min-h-full">
+    <div className={`font-noto-sans bg-slate-900 text-indigo-100 w-full min-h-full ${navPercent>1?"pt-[8vh] my-4":""}`}>
       {<Sketch setup={setup} draw={draw} mouseMoved={onMove}/>}
-      <div ref ={screenRef} className="absolute top-0 w-screen flex flex-col items-center sm:flex-row-reverse justify-evenly sm:pt-6 sm:pb-14 h-[81vh] sm:h-[92vh]">
+      <div ref ={screenRef} className="absolute top-0 w-screen flex flex-col items-center sm:flex-row-reverse justify-evenly sm:pt-6 sm:pb-14 h-[81vh] sm:h-[100vh]">
         <div className='mt-[12vh] sm:mt-0 flex flex-col items-center sm:flex-row-reverse sm:justify-start sm:pt-6'>
-        <img className="w-3/5 md:w-1/3 lg:w-1/4 lg:mr-auto" src={"./george3.png"}></img>
+        <img className="w-3/5 md:w-1/3 lg:min-w-1/4 lg:mr-auto" src={"./images/george3.png"}></img>
         <div className='sm:hidden sm:w-1/2 m-auto min-h-full flex justify-center'>
-          <h1 className='sm:hidden  font-tangerine text-6xl sm:text-8xl p-8 rounded'>George Huber</h1>
+          <h1 className='sm:hidden  font-extrabold text-4xl sm:text-8xl p-8 rounded'>George Huber</h1>
         </div>
+        <p  className='hidden relative sm:block m-auto text-xl font-normal'>
+          Hello, I'm 
         <div className='hidden sm:flex sm:w-auto m-auto min-h-full flex justify-center' style={{
-          transform:`translate(0,${navPercent<1?navPercent*y0/2:0}px)`
+          transform:`translate(0,${navPercent<1?navPercent*y0/1.9:0}px)`
         }}>
+          
           <h1 style = {{
               transform: `scale(${(1-navPercent)*0.5+0.5}) rotate(${3*360*(1-navPercent)}deg)`
-            }} className='  m-auto hidden sm:block font-tangerine text-6xl sm:text-8xl p-8 rounded'>George Huber</h1>
+            }} className='  m-auto hidden sm:block  text-4xl sm:text-6xl font-extrabold p-8 rounded'>George Huber</h1>
         </div>
+        <SocialDiv></SocialDiv>
+        <h1 className="absolute z-0 top-0 w-full h-full text-xl text-center pt-80 z" style={{ color: blink ? "white" : "rgba(0,0,0,0)" }}>&#9660;</h1>
+        </p>
+        
         </div>
       </div>
-      <div ref={navRef} className={navPercent>1?headerClasses+" fixed":headerClasses}>
+      <div ref={navRef} className={navPercent>1?headerClasses+" fixed":headerClasses+" sm:mt-[8vh]"}>
         {/*Make list space evenly on font adjust */}
         <ul className='list-none font-light text-xl w-full sm:w-2/3 flex flex-row justify-evenly ' >
-        {navPercent>1?<li className='hidden sm:block font-tangerine text-3xl ' onClick={()=>animateScroll.scrollTo(0)}>George Huber</li>:""}
+        {navPercent>1?<li className='hidden sm:block  text-2xl  font-extrabold' onClick={()=>animateScroll.scrollTo(0)}>George Huber</li>:""}
         <li className=''>
           <Link className="rounded " activeClass="font-bold" to="home" spy={true} smooth={true} offset={0} duration={500}>
             Home
@@ -172,19 +239,13 @@ function App() {
         </ul>
       </div>
       <Element name="home">
-        <div className='min-h-screen'>
-
-        </div>
+            <HomeScreen></HomeScreen>
       </Element>
       <Element name = "me">
-        <div className='min-h-screen'>
-
-        </div>
+            <MeScreen></MeScreen>
       </Element>
       <Element name = "projects">
-        <div className='min-h-screen'>
-
-        </div>
+            <ProjectsScreen></ProjectsScreen>
       </Element>
       
     </div>
