@@ -192,7 +192,7 @@ function App() {
   }
 
   return (
-    <div className={`font-noto-sans bg-slate-900 text-indigo-100 w-full min-h-full ${navPercent>1?"pt-[8vh] my-4":""}`}>
+    <div className={`relative font-noto-sans bg-slate-900 text-indigo-100 w-full min-h-full ${navPercent>1?"pt-[8vh] mt-4":""}`}>
       {<Sketch setup={setup} draw={draw} mouseMoved={onMove}/>}
       <div ref ={screenRef} className="absolute top-0 w-screen flex flex-col items-center sm:flex-row-reverse justify-evenly sm:pt-6 sm:pb-14 h-[81vh] sm:h-[100vh]">
         <div className='mt-[12vh] sm:mt-0 flex flex-col items-center sm:flex-row-reverse sm:justify-start sm:pt-6'>
@@ -247,7 +247,9 @@ function App() {
       <Element name = "projects">
             <ProjectsScreen></ProjectsScreen>
       </Element>
-      
+      <div className='w-full h-[8vh] md:px-32 bg-black absolute bottom-0 z-30 flex flex-row items-center justify-around'>
+        <h1>Copyright 2022 George Huber</h1> <a href="mailto:georgehuber8@gmail.com">georgehuber8@gmail.com</a>
+      </div>
     </div>
   );
 }

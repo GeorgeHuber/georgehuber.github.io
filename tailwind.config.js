@@ -7,6 +7,9 @@ module.exports = {
       fontFamily:{
         'noto-sans':['Noto Sans','sans-serif'],
         "tangerine":["Tangerine","cursive"]
+      },
+      gridTemplateColumns:{
+        "80rem":"repeat(3,minmax(80rem,1fr))"
       }
     },
   },
