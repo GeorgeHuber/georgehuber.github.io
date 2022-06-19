@@ -47,7 +47,7 @@ export const HomeScreen = (props) =>{
         <div className='block sm:hidden mt-16'>
             <SocialDiv></SocialDiv>
         </div>
-        <div className="min-h-screen w-full font-noto-sans p-4 sm:px-20 py-[12vh] sm:py-[16vh]">
+        <div className="min-h-screen px-12 w-full font-noto-sans p-4 sm:px-20 py-[12vh] sm:py-[16vh]">
             <h1 className="text-4xl font-light border-b-2 pb-3 sm:pr-8 sm:w-fit">I am currently:</h1> 
             <div className="flex flex-col sm:flex-row justify-around my-10 py-10 space-y-12 sm:space-y-0">
                 <div className="rounded-lg bg-slate-300 text-black h-fit p-10 sm:w-[30%]">

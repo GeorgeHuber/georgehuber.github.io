@@ -1,7 +1,7 @@
 export const MeScreen = (props) =>{
     return(
-        <div className='min-h-screen w-full font-noto-sans p-4 sm:px-20 pb-[12vh] sm:pb-[16vh]'>
-            <div className="gap-y-16  w-full grid sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
+        <div className='min-h-screen  sm:w-full font-noto-sans p-4 sm:px-20 pb-[12vh] sm:pb-[16vh]'>
+            <div className="gap-y-16  w-full flex flex-col items-center sm:grid sm:grid-cols-2 xl:grid-cols-3 text-gray-300">
             <div className="font-thin text-indigo-100 text-4xl rounded-[100%] border w-80 h-80 flex flex-col text-center justify-center">How I Got Here<br></br><p className="text-base font-normal">or so I think</p></div>
             
             
