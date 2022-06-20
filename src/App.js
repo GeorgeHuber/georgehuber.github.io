@@ -198,7 +198,7 @@ function App() {
   }
 
   return (
-    <div className={`relative font-noto-sans bg-slate-900 text-indigo-100 w-full min-h-full ${navPercent>1?`pt-[8vh]`:""}`}>
+    <div className={`relative font-noto-sans bg-slate-900 text-indigo-100 w-full min-h-full ${navPercent>1?`pt-[8vh] sm:mt-[8vh]`:""}`}>
       {<Sketch setup={setup} draw={draw} mouseMoved={onMove} windowResized={windowResized}/>}
       <div ref ={screenRef} className="absolute top-0 w-screen flex flex-col items-center sm:flex-row-reverse justify-evenly sm:pt-6 sm:pb-14 h-[81vh] sm:h-[100vh]">
         <div className='mt-[12vh] sm:mt-0 flex flex-col items-center sm:flex-row-reverse sm:justify-start sm:pt-6'>
