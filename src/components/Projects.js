@@ -29,7 +29,7 @@ export const ProjectsScreen = (props) => {
             <div className="rounded-xl w-11/12 mt-12 h-auto py-6 px-10 bg-black">
                 <div className="flex flex-col sm:flex-row">
                     <div className="flex flex-col space-y-4">
-                        <div className="flex flex-row space-x-6 items-center"><h3 className="text-indigo-200 font-medium text-xl">2020</h3><h5>-</h5><h2 className="font-bold text-2xl">D12 Driving App</h2></div>
+                        <div className="flex flex-row space-x-6 items-center"><h3 className="text-indigo-200 font-medium text-xl">2020</h3><h5>-</h5><h2 className="font-bold text-2xl">D128 Driving App</h2></div>
                         <h2 className="text-lg text-white">React-Native, Firebase, Google OAuth</h2>
                         <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Servicing over 300 students, the D128 Driving app allows students to track their hours and join virtual classrooms to streamline the drivers education process. </p>
                     </div>

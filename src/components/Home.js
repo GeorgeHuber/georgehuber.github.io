@@ -72,7 +72,7 @@ Association for Computing Machinery (ACM), and the Marching Illini.
                     <p>^ Predicted based on current central time</p>
                 </div>
                 <div className="rounded-lg bg-slate-300 text-black h-fit p-10 sm:w-[30%]">
-                    <h3 className="font-bold text-xl">Working On This Website</h3>
+                    <h3 className="font-bold text-xl">Coding This Website</h3>
                     <br></br>
                     <p>
                         This website is being made from scratch using: 
