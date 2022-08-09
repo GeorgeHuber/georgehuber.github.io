@@ -217,7 +217,7 @@ function App() {
             }} className='  m-auto hidden sm:block  text-4xl sm:text-6xl font-extrabold p-8 rounded'>George Huber</h1>
         </div>
         <SocialDiv></SocialDiv>
-        <h1 className="absolute z-0 top-0 w-full h-full text-xl text-center pt-80 z" style={{ color: blink ? "white" : "rgba(0,0,0,0)" }}>&#9660;</h1>
+        <h1 className="absolute z-0 top-16 w-full h-full text-xl text-center pt-80 z" style={{ color: blink ? "white" : "rgba(0,0,0,0)" }}>&#9660;</h1>
         </p>
         
         </div>
