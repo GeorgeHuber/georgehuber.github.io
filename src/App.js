@@ -247,12 +247,13 @@ function App() {
       <Element name="home">
             <HomeScreen></HomeScreen>
       </Element>
-      <Element name = "me">
-            <MeScreen></MeScreen>
-      </Element>
       <Element name = "projects">
             <ProjectsScreen></ProjectsScreen>
       </Element>
+      <Element name = "me">
+            <MeScreen></MeScreen>
+      </Element>
+      
       <div className='w-full h-[8vh] md:px-32 bg-black absolute bottom-0 z-30 flex flex-row items-center justify-around'>
         <h1>Copyright 2022 George Huber</h1> <a href="mailto:georgehuber8@gmail.com">georgehuber8@gmail.com</a>
       </div>

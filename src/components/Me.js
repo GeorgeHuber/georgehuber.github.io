@@ -22,7 +22,7 @@ export const MeScreen = (props) =>{
                 <br></br>
                 <img className="w-32" src={"./images/cninjas.png"}></img>
                 <br></br>
-                <p>Working as an instructor and later software developer at Code Ninjas helped me purchase my first real computer while making an impact on hundreds of children.</p>
+                <p>Working as an instructor and later software developer at Code Ninjas helped me purchase my first real computer while making an impact on hundreds of children. </p>
                 
                
             </div>

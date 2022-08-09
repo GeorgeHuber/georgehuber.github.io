@@ -17,6 +17,21 @@ export const ProjectsScreen = (props) => {
             <div className="rounded-xl w-11/12 mt-12 h-auto py-6 px-10 bg-black">
                 <div className="flex flex-col sm:flex-row">
                     <div className="flex flex-col space-y-4">
+                        <div className="flex flex-row space-x-6 items-center"><h3 className="text-indigo-200 font-medium text-xl">2022</h3><h5>-</h5><h2 className="font-bold text-2xl">Spinning Donut</h2></div>
+                        <h2 className="text-lg text-white">Python</h2>
+                        <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Built entirely from scratch on a road trip using only print statements for graphical display, this 3D physics simulator uses ray tracing and Calculus to make a donut spin out of thin air. It allows orthographic camera movement, addition of light sources, shading, and controls over rotating motion.</p>
+                    </div>
+                    <a target="_blank" className="flex flex-col items-center" href="https://github.com/GeorgeHuber/donut">
+                    <iframe
+                         src="https://drive.google.com/file/d/1BpLl4Toa-nHq-QyROp81FpstPy4Fekaj/preview?autoplay=1" type="video/mp4">
+                    </iframe>
+                        *view code*
+                    </a>
+                </div>
+            </div>
+            <div className="rounded-xl w-11/12 mt-12 h-auto py-6 px-10 bg-black">
+                <div className="flex flex-col sm:flex-row">
+                    <div className="flex flex-col space-y-4">
                         <div className="flex flex-row space-x-6 items-center"><h3 className="text-indigo-200 font-medium text-xl">2022</h3><h5>-</h5><h2 className="font-bold text-2xl">March Madness Bracket Simulator</h2></div>
                         <h2 className="text-lg text-white">Python, Kaggle, TensorFlow</h2>
                         <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Using a kaggle data set dating back to 1985, I calculated NCAA's mens basketball stats by hand and then performed a complex analysis to create a predictive march madness model.<br></br><br></br>*Correction to the article - 10,000 lines of data not 100,000 lines of code which is physically impossible</p>
@@ -31,7 +46,7 @@ export const ProjectsScreen = (props) => {
                     <div className="flex flex-col space-y-4">
                         <div className="flex flex-row space-x-6 items-center"><h3 className="text-indigo-200 font-medium text-xl">2020</h3><h5>-</h5><h2 className="font-bold text-2xl">D128 Driving App</h2></div>
                         <h2 className="text-lg text-white">React-Native, Firebase, Google OAuth</h2>
-                        <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Servicing over 300 students, the D128 Driving app allows students to track their hours and join virtual classrooms to streamline the drivers education process. </p>
+                        <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Servicing over 300 students, the D128 Driving app allows students to track their hours and join virtual classrooms to streamline the drivers education process. This app was coded and published over the COVID 19 Pandemic and is still in use at two high schools today.  </p>
                     </div>
                     <a target="_blank" className="flex flex-col items-center" href="https://apps.apple.com/us/app/d128driving/id1532687628"><img className="w-40" src="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/6c/be/05/6cbe0580-41cd-da56-0782-c983265891b7/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"></img>
                         *view*
