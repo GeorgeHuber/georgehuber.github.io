@@ -22,9 +22,8 @@ export const ProjectsScreen = (props) => {
                         <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Built entirely from scratch on a road trip using only print statements for graphical display, this 3D physics simulator uses ray tracing and Calculus to make a donut spin out of thin air. It allows orthographic camera movement, addition of light sources, shading, and controls over rotating motion.</p>
                     </div>
                     <a target="_blank" className="flex flex-col items-center" href="https://github.com/GeorgeHuber/donut">
-                    <iframe
-                         src="https://drive.google.com/file/d/1BpLl4Toa-nHq-QyROp81FpstPy4Fekaj/preview?autoplay=1" type="video/mp4">
-                    </iframe>
+                    
+                    <iframe width="400" allowFullScreen={true} height="300" src="https://www.youtube.com/embed/8qvQ759m0gQ?autoplay=1&loop=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         *view code*
                     </a>
                 </div>
@@ -34,7 +33,7 @@ export const ProjectsScreen = (props) => {
                     <div className="flex flex-col space-y-4">
                         <div className="flex flex-row space-x-6 items-center"><h3 className="text-indigo-200 font-medium text-xl">2022</h3><h5>-</h5><h2 className="font-bold text-2xl">March Madness Bracket Simulator</h2></div>
                         <h2 className="text-lg text-white">Python, Kaggle, TensorFlow</h2>
-                        <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Using a kaggle data set dating back to 1985, I calculated NCAA's mens basketball stats by hand and then performed a complex analysis to create a predictive march madness model.<br></br><br></br>*Correction to the article - 10,000 lines of data not 100,000 lines of code which is physically impossible</p>
+                        <p className="sm:font-medium pb-6 sm:pb-0 sm:pr-32 text-gray-400">Using a kaggle data set dating back to 1985, I calculated NCAA's mens basketball stats and then performed a complex analysis to create a predictive march madness model.<br></br><br></br>*Correction to the article - 10,000 lines of data not 100,000 lines of code which is physically impossible</p>
                     </div>
                     <a target="_blank" className="flex flex-col items-center" href="https://www.lhsdoi.com/24526/sports/libertyvilles-computer-scientist-george-huber-and-his-predictive-march-madness-model/"><img className="w-60 m-auto" src="https://www.lhsdoi.com/wp-content/uploads/2022/05/USING-IN-LAYOUT-900x457.png"></img>
                         *view*
