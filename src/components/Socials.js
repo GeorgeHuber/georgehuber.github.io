@@ -2,7 +2,7 @@ export const SocialDiv = () =>{
     return(
       <div>
         <div className='px-10 sm:px-0 flex flex-col sm:flex-row border-indigo-400 border-top-2 flex-row w-full my-4 justify-center space-y-8 sm:space-y-0 sm:space-x-16 pt-4'>
-          <a target="_blank" href="https://drive.google.com/file/d/1dTXtSFFdK4f8qlkD_0BpmMy9Lv7-RZWo/view?usp=sharing" className='z-20 bg-indigo-100 text-black hover:scale-105 transition py-2 px-4 rounded-lg border-2 flex items-center space-x-4 w-full justify-center font-bold text-2xl'>
+          <a target="_blank" href="https://docs.google.com/document/d/1iPoyUDySymcssV1OOLK4WK71zzUWuF9H/edit?usp=sharing&ouid=115681616817068574574&rtpof=true&sd=true" className='z-20 bg-indigo-100 text-black hover:scale-105 transition py-2 px-4 rounded-lg border-2 flex items-center space-x-4 w-full justify-center font-bold text-2xl'>
           <a>Resume</a>
           <img src={"./images/resume.svg"} className="w-8"></img>
           </a>
